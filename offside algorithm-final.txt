@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+//defining inputs: the tag must provide the information that is defined at the structure
+//x and team is crucial , y is optional
+
+struct player {
+    float x;
+    float y;
+    int team;
+}players[23];
+
+//The scale starts from left to right and from top to bottom 
+//ie. (0,0) exists at the top left.
+
+//This scenario happens when the ball is being passed 
+//and the defending team is on the left. 
+
+//team - 0 - defense , team - 1 - attack
+
+/*It'll be a function
+sampleFunc(playersArguments[] , num_players)
+*/
+
+int main()
+{
+    float x1 , y1;
+    
+   
+    
+    printf("Enter the x and y cordinates of the defending player");
+    
+    scanf("%f" , &x1);
+    scanf("%f" , &y1);
+    
+    players[0].x = x1;
+    players[0].y = y1;
+    players[0].team = 0;
+    
+    printf("Enter the x and y cordinates of the attacking player");
+    
+    scanf("%f" , &x1);
+    scanf("%f" , &y1);
+    
+    players[1].x = x1;
+    players[1].y = y1;
+    players[1].team = 1;
+    
+    if(players[1].x < players[0].x) {
+        printf("It's offside");
+    } else {
+        printf("It's safe");
+    }
+    
+   
+    
+    return 1;
+}
